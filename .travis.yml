@@ -3,11 +3,11 @@ rvm:
   - 2.0.0-p247
 branches:
   only:
-    - master
-install: 
-	- bundle install
-script: 
-    - bundle exec jekyll build
+   - master
+install:
+  - bundle install
+script:
+ - bundle exec jekyll build
 deploy:
     provider: s3
     access_key_id: $AWS_ACCESS_KEY
