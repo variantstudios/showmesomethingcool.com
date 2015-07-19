@@ -13,12 +13,14 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: showmesomethingcool.com
-    endpoint: http://showmesomethingcool.com.s3-website-us-west-2.amazonaws.com/
+    endpoint: showmesomethingcool.com.s3-website-us-west-2.amazonaws.com
     region: us-west-2
     skip_cleanup: true
-    local-dir: _site
+    upload-dir: _site
     acl: public_read
     detect_encoding: true
+    cache_control: "max-age=31536000"
+    expires: "2015-12-21 00:00:00 -0000"
 notifications:
     email:
-        on_failure: always
+     - team@variantstudios.com
