@@ -12,3 +12,5 @@ github_username:  brentrobbins
 
 # Build settings
 markdown: kramdown
+
+exclude: [vendor]
