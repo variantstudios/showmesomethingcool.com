@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - "2.0.0p247"
+  - "2.0.0"
 branches:
   only:
     - master
@@ -9,7 +9,7 @@ install:
 script: jekyll serve --no-watch
 deploy:
     provider: s3
-    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: showmesomethingcool.com
     endpoint: http://showmesomethingcool.com.s3-website-us-west-2.amazonaws.com/
