@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Test
+permalink: /test/
 ---
 
 This site is to demo Jekyll. A static website generator.
