@@ -6,10 +6,10 @@ permalink: /contact/
 
 Contact us.
 <form action="//formspree.io/team@variantstudios.com" method="POST">
-<label for="name">Name</label>
-<label<input type="text" name="name" autofocus required/>
-<label for="_replyto">Email</label>
-<input type="email" name="_replyto" required"/>
-<label for="message">Message</label>
-<input type="textarea"  name="message" placeholder="last name"  required />
+<p><label for="name">Name</label> <input type="text" autofocus="" required="" name="name" /></p>
+
+<p><label for="_replyto">Email</label>
+<input type="email" name="_replyto"></p>
+
+<p><label for="message">Message</label> <input type="textarea" placeholder="last name" required="" name="message" /></p>
 <input type="submit" value="Send" /> </form>
