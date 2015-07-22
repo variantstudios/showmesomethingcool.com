@@ -14,7 +14,7 @@ deploy:
   bucket: showmesomethingcool.com
   endpoint: showmesomethingcool.com.s3-website-us-west-2.amazonaws.com
   region: us-west-2
-  skip_cleanup: true
+  skip_cleanup: false
   local-dir: _site
   acl: public_read
   detect_encoding: true
