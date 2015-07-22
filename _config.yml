@@ -13,4 +13,4 @@ github_username:  brentrobbins
 # Build settings
 markdown: kramdown
 
-exclude: ["vendor","node_modules","package.json","Gemfile","gulpfile.js"]
+exclude: ["vendor","node_modules","package.json","Gemfile","gulpfile.js","*.scss"]
