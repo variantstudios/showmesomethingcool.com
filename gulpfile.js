@@ -1,8 +1,12 @@
-var gulp        = require('gulp');
-var browserSync = require('browser-sync');
-var sass        = require('gulp-sass');
-var prefix      = require('gulp-autoprefixer');
-var cp          = require('child_process');
+'use strict';
+
+var gulp            = require('gulp'),
+    browserSync     = require('browser-sync'),
+    sass            = require('gulp-sass'),
+    compass         = require('gulp-compass'),
+    minifyCSS       = require('gulp-minify-css'),
+    prefix          = require('gulp-autoprefixer'),
+    cp              = require('child_process');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -60,6 +64,19 @@ gulp.task('sass-deploy', function () {
    .pipe(gulp.dest('_site/assets/css'));
 });
 
+
+gulp.task('compass', function() {
+  gulp.src('assets/sass/*.scss')
+    .pipe(compass({
+      css: 'assets/css',
+      sass: 'assets/sass',
+      image: 'assets/images',
+      require: ['breakpoint','singularitygs','toolkit','breakpoint']
+    }))
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('assets/css'))
+    .pipe(gulp.dest('_site/assets/css'));
+});
 
 /**
  * Watch scss files for changes & recompile

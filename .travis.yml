@@ -14,12 +14,12 @@ deploy:
   bucket: showmesomethingcool.com
   endpoint: showmesomethingcool.com.s3-website-us-west-2.amazonaws.com
   region: us-west-2
-  skip_cleanup: false
+  skip_cleanup: true
   local-dir: _site
   acl: public_read
   detect_encoding: true
-  cache_control: max-age=31536000
-  expires: '2015-12-21 00:00:00 -0000'
+  cache_control: "max-age=31536000"
+  expires: "2015-12-21 00:00:00 -0000"
   secret_access_key:
     secure: WG25vGx9v7uaXpFvh/BYVLQpIKOEWmS9HWnS0dauhH7u9eIDG0fClvU54onPCrGVgtf2BdbQJWi1IwBJGbknMHS9VMNY4ERlBWzLmZSVH7uuvnef4YqzGPjsJwNwqMshcmm9hKjEfyhxrodKw4180eHh5DLZDBnAt1UZl1kAbuADib68nYgt0Ljd9Ky2JaynHpI65zD/ir/q83EXAElKRinryr0vM8NQml8hA5sbcppV0YaeDG0OcUjzqYjhU5OA4np9A67pl+C3j/JW9gjfeAr1WaMvMvvflCLKOdHPRkWRMBazCnbFD16c3LCtbcIKHx3QGMrYX9sL4nfpvxAWKJyueOvbn/6yEg+/asLnyGIP4xESkWGmW+0agv9tn0MgTq3q3SehZ3rcJrBlD9A740NpiN3iFEaTGhQTZSe0td0ZBswCHZLtc6kxf5QRhyZmvBeeiIWmzGY6/Ciom51zsaG3fmghI7xPc6FVdLhA1Tkf9v6EGgU3DxMZfpJBh9aRmeI71froACt+7T4XU5xLhRnZgpKPE0zTEpWD8AEKH0SzHiLKKXrAkiK2DbY3INxwkRy8mzV/ZhhwvxbQmZ61zD54GlgfhUq/jQlOMnhtHBg4Wn4cuptqm45ENlvhaddZWEpSykHLiJLjAkT1JbFR8HgFDfYYkyNpeVuZVP+yw9E=
   access_key_id:
