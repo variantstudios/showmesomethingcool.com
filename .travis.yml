@@ -6,8 +6,9 @@ branches:
   - master
 install:
 - bundle install
+- npm install
 script:
-- bundle exec jekyll build
+- gulp deploy
 deploy:
   provider: s3
   bucket: showmesomethingcool.com
