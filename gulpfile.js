@@ -84,7 +84,8 @@ gulp.task('compass', function() {
  */
 gulp.task('watch', function () {
     gulp.watch('assets/css/**', ['sass']);
-    gulp.watch(['index.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
+    //gulp.watch(['index.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
+    gulp.watch(['**.md', '**.html'], ['jekyll-rebuild']);
 });
 
 /**
