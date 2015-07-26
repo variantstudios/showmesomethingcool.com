@@ -4,11 +4,15 @@ rvm:
 branches:
   only:
   - master
+before_install:
+  - export NOKOGIRI_USE_SYSTEM_LIBRARIES=true  
 install:
 - bundle install
 - npm install
+- gem install html-proofer
 script:
 - gulp deploy
+- bundle exec htmlproof ./_site
 deploy:
   provider: s3
   bucket: showmesomethingcool.com
