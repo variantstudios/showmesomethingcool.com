@@ -6,7 +6,9 @@ var gulp            = require('gulp'),
     compass         = require('gulp-compass'),
     minifyCSS       = require('gulp-minify-css'),
     prefix          = require('gulp-autoprefixer'),
-    cp              = require('child_process');
+    cp              = require('child_process'),
+    uglify          = require('gulp-uglify'),
+    gzip            = require('gulp-gzip');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -88,10 +90,19 @@ gulp.task('watch', function () {
     gulp.watch(['**.md', '**.html'], ['jekyll-rebuild']);
 });
 
+gulp.task('compress', function() {
+
+    gulp.src('assets/js/**')
+    .pipe(uglify())
+    .pipe(gzip({ append: false }))
+    .pipe(gulp.dest('_site/assets/js/'));
+});
+
+
 /**
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
 
-gulp.task('deploy', ['jekyll-build', 'sass-deploy']);
+gulp.task('deploy', ['jekyll-build', 'sass-deploy', 'compress']);
