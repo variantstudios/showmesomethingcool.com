@@ -5,12 +5,47 @@ description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: "http://showmesomethingcool.com" # the subpath of your site, e.g. /blog/
 url: "http://showmesomethingcool.com" # the base hostname & protocol for your site
-twitter_username: variantstudios
-github_username:  brentrobbins
+timezone: America/Denver
+
 
 # Build settings
+highlighter: pygments
 markdown: kramdown
+kramdown:
+  auto_ids: true
+  toc_levels: 1..6
+
+
+# Permalinks
+permalink: pretty
+
+
+# Blog Settings
+paginate: 3
+paginate_path: "/blog/page:num/"
+
+# Reading Time Feature
+reading_time:     true
+words_per_minute: 200
+
+# Disqus Comments
+disqus_short_name: variantstudios
+disqus_show_comment_count: true
+
+# typekit
+typekit: ""
+
+# Social Media
+googleplus: "+Variantstudios"
+facebook: "variantstudios"
+twitter: "variantstudios"
+linkedin: "202165"
+instagram: "variantstudios"
+github: "variantstudios"
+
+# Google Analytics
+google_analytics_tracking_id: "UA-XXXXXXX-XX"
 
 exclude: ["vendor","node_modules","package.json","Gemfile","gulpfile.js","*.scss"]

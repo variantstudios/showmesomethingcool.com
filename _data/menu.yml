@@ -1,0 +1,14 @@
+- text: Home
+  url: /
+- text: Blog
+  url: /blog/
+  subitems:
+    - text: Archive
+      url: /blog/archive/
+- text: About
+  url: /about/
+  subitems:
+    - text: Test Sub Page
+      url: /test-sub-page/
+- text: Contact
+  url: /contact/

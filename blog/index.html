@@ -1,0 +1,51 @@
+---
+layout: default
+title: "Blog"
+description: ""
+
+# Don't set permalink or it'll break paginator 
+# permalink: /blog/
+---
+<h1>{{ page.title }}</h1>
+
+<!-- This loops through the paginated posts -->
+<div itemscope itemtype="http://schema.org/Blog">
+{% for post in paginator.posts %}
+  <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <h1 class="title" itemprop="name"><a href="{{ post.url }}" itemprop="url">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h1>
+    <p class="date">{{ post.date | date: "%B %-d, %Y" }}</p>
+    <div class="entry-content" itemprop="articleBody">
+    {{ post.content | strip_html | truncatewords: 40 }}
+    </div>
+  </article>
+{% endfor %}
+</div>
+
+
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+  {% else %}
+    <span>&laquo; Prev</span>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <em>{{ page }}</em>
+    {% elsif page == 1 %}
+      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+  {% else %}
+    <span>Next &raquo;</span>
+  {% endif %}
+</div>
+{% endif %}
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>

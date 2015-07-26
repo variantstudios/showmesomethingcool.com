@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Log in</title>
+    <style>
+      .incorrect-login-message {
+        display: none;
+      }
+
+      .has-incorrect-login .incorrect-login-message {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Log in</h1>
+
+    <form action="" method="post" class="{{messageClasses}}">
+      <div class="incorrect-login-message">
+        Incorrect email address or password.
+      </div>
+
+      <label for="email">Email Address</label>
+      <input id="email" type="email" name="email" autofocus>
+
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password">
+
+      <input type="submit" value="Log in">
+    </form>
+
+    <a href="/reset-password">Forgot your password?</a>
+  </body>
+</html>
