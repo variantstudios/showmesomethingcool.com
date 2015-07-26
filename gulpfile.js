@@ -31,7 +31,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['compass', 'jekyll-build'], function() {
     browserSync({
         server: {
             baseDir: '_site'
@@ -42,7 +42,7 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
 /**
  * Compile files from assets/css into both _site/assets/css (for live injecting) and site (for future jekyll builds)
  */
-gulp.task('sass', function () {
+gulp.task('compass', function () {
     return gulp.src('assets/sass/**/*.scss')
         .pipe(sass({
             includePaths: ['assets/css'],
@@ -83,7 +83,7 @@ gulp.task('compass', function() {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('assets/css/**', ['sass']);
+    gulp.watch('assets/sass/**', ['compass']);
     //gulp.watch(['index.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
     gulp.watch(['**.md', '**.html'], ['jekyll-rebuild']);
 });
