@@ -23,7 +23,7 @@ kramdown:
 
 
 # Permalinks
-permalink: pretty
+permalink: /blog/:year-:month-:day/:title/
 
 
 # Blog Settings
