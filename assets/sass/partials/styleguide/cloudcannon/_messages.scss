@@ -10,14 +10,16 @@ div.messages {
   border-radius: 3px;
   &.warning {
     background-color: $warning;
-    background-image: url(../images/warning.png);
+    /*background-image: url(../images/warning.png);*/
   }
   &.status {
     background-color: $valid;
-    background-image: url(../images/success.png);
+    /*background-image: url(../images/success.png);*/
   }
   &.error {
     background-color: $error;
-    background-image: url(../images/error.png);
+    /*background-image: url(../images/error.png);*/
   }
 }
+
+

@@ -1,35 +1,24 @@
-<!DOCTYPE html>
+---
+layout: page
+title: "Log In"
+description: ""
+sitemap:
+  exclude: 'yes'
+noindex: true
+---
 
-<html>
-  <head>
-    <title>Log in</title>
-    <style>
-      .incorrect-login-message {
-        display: none;
-      }
+<form action="" method="post" class="{{messageClasses}}">
+  <div class="incorrect-login-message">
+  Incorrect email address or password.
+  </div>
 
-      .has-incorrect-login .incorrect-login-message {
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Log in</h1>
+  <label for="email">Email Address</label>
+  <input id="email" type="email" name="email" autofocus>
 
-    <form action="" method="post" class="{{messageClasses}}">
-      <div class="incorrect-login-message">
-        Incorrect email address or password.
-      </div>
+  <label for="password">Password</label>
+  <input id="password" type="password" name="password">
 
-      <label for="email">Email Address</label>
-      <input id="email" type="email" name="email" autofocus>
+  <input type="submit" value="Log in">
+</form>
 
-      <label for="password">Password</label>
-      <input id="password" type="password" name="password">
-
-      <input type="submit" value="Log in">
-    </form>
-
-    <a href="/reset-password.html">Forgot your password?</a>
-  </body>
-</html>
+<a href="/reset-password.html">Forgot your password?</a>

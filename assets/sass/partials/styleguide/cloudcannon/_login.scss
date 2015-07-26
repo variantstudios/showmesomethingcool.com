@@ -1,0 +1,7 @@
+.incorrect-login-message {
+	display: none;
+}
+
+.has-incorrect-login .incorrect-login-message {
+	display: block;
+}
