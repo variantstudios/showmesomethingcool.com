@@ -3,6 +3,7 @@ layout: post
 title:  "Markdown Example"
 date:   2015-07-23 20:30:44
 categories: markdown
+comments: true
 sitemap:
   lastmod: 2015-07-23 20:30:44
   priority: 0.7
