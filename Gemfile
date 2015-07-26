@@ -4,3 +4,4 @@ gem "jekyll"
 gem 'toolkit', '2.3.0'
 gem 'singularitygs', '1.2.1'
 gem 'breakpoint', '2.5.0'
+gem 'html-proofer'
