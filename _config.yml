@@ -9,6 +9,10 @@ baseurl: "http://showmesomethingcool.com" # the subpath of your site, e.g. /blog
 url: "http://showmesomethingcool.com" # the base hostname & protocol for your site
 timezone: America/Denver
 
+# Site Author(s)
+author:
+  name: Brent Robbins
+  email: brent@showmesomethingcool.com
 
 # Build settings
 highlighter: pygments
