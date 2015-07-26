@@ -26,8 +26,6 @@ $ bundle install
 `$ brew install node010`
 
 
----
-
 
 # Setup the site
 
