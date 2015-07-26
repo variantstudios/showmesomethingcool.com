@@ -12,7 +12,7 @@ install:
 # - gem install html-proofer
 script:
 - gulp deploy
-- bundle exec htmlproof ./_site
+# bundle exec htmlproof ./_site
 deploy:
   provider: s3
   bucket: showmesomethingcool.com
