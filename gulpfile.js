@@ -8,6 +8,7 @@ var gulp            = require('gulp'),
     prefix          = require('gulp-autoprefixer'),
     cp              = require('child_process'),
     uglify          = require('gulp-uglify'),
+    plumber         = require('gulp-plumber'),
     gzip            = require('gulp-gzip');
 
 var messages = {
@@ -44,16 +45,7 @@ gulp.task('browser-sync', ['compass', 'jekyll-build'], function() {
 /**
  * Compile files from assets/css into both _site/assets/css (for live injecting) and site (for future jekyll builds)
  */
-gulp.task('compass', function () {
-    return gulp.src('assets/sass/**/*.scss')
-        .pipe(sass({
-            includePaths: ['assets/css'],
-            onError: browserSync.notify
-        }))
-        .pipe(gulp.dest('assets/css'))
-        .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest('_site/assets/css'));
-});
+
 
 gulp.task('sass-deploy', function () {
     gulp.src('assets/css/**/*.scss')
@@ -67,8 +59,22 @@ gulp.task('sass-deploy', function () {
 });
 
 
+
+/**
+ * Watch scss files for changes & recompile
+ * Watch html/md files, run jekyll & reload BrowserSync
+ */
+gulp.task('watch', function () {
+    gulp.watch('assets/sass/**', ['compass']);
+    gulp.watch('assets/js/**', ['scripts']);
+    gulp.watch(['**.md', '**.html'], ['jekyll-rebuild']);
+});
+
+// Compile Compass/sass
+
 gulp.task('compass', function() {
-  gulp.src('assets/sass/*.scss')
+  gulp.src('assets/sass/**.scss')
+    .pipe(plumber())
     .pipe(compass({
       css: 'assets/css',
       sass: 'assets/sass',
@@ -77,24 +83,19 @@ gulp.task('compass', function() {
     }))
     .pipe(minifyCSS())
     .pipe(gulp.dest('assets/css'))
+    .pipe(browserSync.reload({stream:true}))
     .pipe(gulp.dest('_site/assets/css'));
 });
 
-/**
- * Watch scss files for changes & recompile
- * Watch html/md files, run jekyll & reload BrowserSync
- */
-gulp.task('watch', function () {
-    gulp.watch('assets/sass/**', ['compass']);
-    //gulp.watch(['index.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
-    gulp.watch(['**.md', '**.html'], ['jekyll-rebuild']);
-});
 
-gulp.task('compress', function() {
+// JS Script Tasks
 
+gulp.task('scripts', function() {
     gulp.src('assets/js/**')
+    .pipe(plumber())
     .pipe(uglify())
-    .pipe(gzip({ append: false }))
+    /*.pipe(gzip({ append: false }))*/
+    .pipe(browserSync.reload({stream:true}))
     .pipe(gulp.dest('_site/assets/js/'));
 });
 
