@@ -106,4 +106,4 @@ gulp.task('scripts', function() {
  */
 gulp.task('default', ['browser-sync', 'watch']);
 
-gulp.task('deploy', ['jekyll-build', 'sass-deploy', 'compress']);
+gulp.task('deploy', ['jekyll-build', 'sass-deploy']);
