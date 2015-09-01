@@ -5,4 +5,4 @@ description: ""
 permalink: /about/
 ---
 
-About content goes here.
+New about content goes here.
